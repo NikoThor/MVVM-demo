@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nt.com.example.mvvm_demo.View.AndroidView">
+    tools:context="nt.com.example.mvvm_demo.view.AndroidView">
 
 
     <EditText
