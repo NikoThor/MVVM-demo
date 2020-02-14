@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nt.com.example.mvvm_demo.MainActivity">
+    tools:context="nt.com.example.mvvm_demo.View.AndroidView">
 
 
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/inputText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -22,7 +22,7 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -33,10 +33,10 @@
         android:text="SUBMIT" />
 
     <TextView
-        android:id="@+id/tvResult"
+        android:id="@+id/outputView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editName"
+        android:layout_below="@id/inputText"
         android:textSize="30sp" />
 
 
