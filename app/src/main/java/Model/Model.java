@@ -1,7 +1,7 @@
 package Model;
 
 public class Model {
-    private String data;
+    private String data = "Hello";
 
     public String getData() {
         return data;
@@ -12,4 +12,4 @@ public class Model {
     }
 
 }
-}
+
