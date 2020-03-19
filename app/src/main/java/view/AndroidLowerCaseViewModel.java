@@ -6,7 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 import Model.Model;
 
-public class AndroidLowerCaseViewModel {
+public class AndroidLowerCaseViewModel extends ViewModel {
     private Model model = new Model();
     private MutableLiveData<String> presentableData = new MutableLiveData<>();
 
