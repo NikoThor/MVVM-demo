@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import java.util.Observable;
+import java.util.Observer;
 import Model.Model;
 import nt.com.example.mvvm_demo.R;
 
@@ -19,6 +20,8 @@ public class AndroidView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        observeModel(model);
+
         TextView outputView = (TextView) findViewById(R.id.outputView);
         outputView.setText(model.getData());
 
@@ -26,13 +29,24 @@ public class AndroidView extends AppCompatActivity {
         inputText.setText(model.getData());
     }
 
-    public void enterInput(View view) {
-        EditText inputText = (EditText) findViewById(R.id.inputText);
-        TextView outputView = (TextView) findViewById(R.id.outputView);
+    private void observeModel(Model model) {
+        model.addObserver(new Observer() {
+            @Override
+            public void update(Observable o, Object arg) {
+                if (o instanceof Model) {
+                    String data = ((Model) o).getData();
+                    TextView outputView = (TextView) findViewById(R.id.outputView);
+                    outputView.setText(data);
+                }
+            }
+        });
+    }
 
-        String input = inputText.getText().toString();
-        outputView.setText(input);
-        model.setData(input);
-        outputView.setText(model.getData());
+
+    public void enterInput(View view) {
+     EditText inputText = (EditText) findViewById(R.id.inputText);
+
+     String input = inputText.getText().toString();
+     model.setData(input);
     }
 }
